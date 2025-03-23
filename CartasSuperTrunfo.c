@@ -17,6 +17,7 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
+  char codigo [4]
   char nome[50]
   // Área para entrada de dados
 
