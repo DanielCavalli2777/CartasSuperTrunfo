@@ -1,4 +1,7 @@
 #include <stdio.h>
+int main(){
+  PRINTF("SUPER TRUNFO\n");
+  PRINTF("NOVO COMMIT\n")
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
