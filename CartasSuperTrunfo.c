@@ -1,4 +1,5 @@
 #include <stdio.h>
+#typedef <struct>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
