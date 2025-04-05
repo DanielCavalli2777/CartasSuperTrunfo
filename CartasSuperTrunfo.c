@@ -1,5 +1,4 @@
 #include <stdio.h>
-#typedef <struct>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
@@ -15,13 +14,62 @@
 
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
+
+#include <string.h> // Necessário para funções de string como strcpy
+
+// Definição da estrutura para armazenar informações da cidade
+typedef struct {
+    char estado;          		  // Estado (ex: 'S' para São Paulo)
+    char codigo_carta[5];      // Código da carta (ex: "SP") - Aumentado para 5 para acomodar o '\0'
+    char nome_cidade[101];     // Nome da cidade (ex: "São Paulo") - Aumentado para 101 para acomodar o '\0' e nomes longos
+    long int populacao;       // População da cidade
+    double area;              // Área da cidade (em km²)
+    double pib;               // Produto Interno Bruto (em bilhões de reais)
+    int num_pontos_turisticos; // Número de pontos turísticos
+} Cidade;
+
 int main() {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
-  char codigo [4]
-  char nome[50]
-  // Área para entrada de dados
+    // Declaração de uma variável do tipo Cidade
+    Cidade city;
 
-  // Área para exibição dos dados da cidade
+    // Interface amigável para o usuário (pedindo para digitar os dados)
+    printf("Digite os dados da cidade:\n");
 
-return 0;
-} 
+    printf("Digite a sigla do Estado (ex: S para São Paulo): ");
+    scanf(" %c", &city.estado); // Observe o espaço antes de %c para consumir espaços em branco
+
+    printf("Digite o Código da Carta do Estado (ex: SP): ");
+    scanf("%4s", city.codigo_carta); // Limitando a leitura para 4 caracteres para evitar buffer overflow
+
+    // Limpeza do buffer de entrada antes de ler o nome da cidade
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+
+    printf("Digite o Nome da Cidade: ");
+    scanf(" %[^\n]", city.nome_cidade); // Lê a linha inteira, incluindo espaços, até encontrar um Enter
+
+    printf("Digite a População: ");
+    scanf("%ld", &city.populacao);
+
+    printf("Digite a Área (em km²): ");
+    scanf("%lf", &city.area);
+
+    printf("Digite o PIB (em bilhões de reais): ");
+    scanf("%lf", &city.pib);
+
+    printf("Digite o Número de Pontos Turísticos: ");
+    scanf("%d", &city.num_pontos_turisticos);
+
+    // Exibindo os dados da cidade que foram digitados
+    printf("\nDados da Cidade Digitados:\n");
+    printf("Estado: %c\n", city.estado);
+    printf("Código da Carta: %s\n", city.codigo_carta);
+    printf("Nome da Cidade: %s\n", city.nome_cidade);
+    printf("População: %ld\n", city.populacao);
+    printf("Área: %.2lf km²\n", city.area); // Formatando para 2 casas decimais
+    printf("PIB: %.2lf bilhões de reais\n", city.pib); // Formatando para 2 casas decimais
+    printf("Número de Pontos Turísticos: %d\n", city.num_pontos_turisticos);
+
+    return 0;
+}
