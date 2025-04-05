@@ -35,10 +35,10 @@ int main() {
     // Interface amigável para o usuário (pedindo para digitar os dados)
     printf("Digite os dados da cidade:\n");
 
-    printf("Digite a sigla do Estado (ex: S para São Paulo): ");
+    printf("Digite a sigla do Estado (ex: S para Sao Paulo): ");
     scanf(" %c", &city.estado); // Observe o espaço antes de %c para consumir espaços em branco
 
-    printf("Digite o Código da Carta do Estado (ex: SP): ");
+    printf("Digite o Código da Carta do Estado (ex: A): ");
     scanf("%4s", city.codigo_carta); // Limitando a leitura para 4 caracteres para evitar buffer overflow
 
     // Limpeza do buffer de entrada antes de ler o nome da cidade
@@ -49,16 +49,16 @@ int main() {
     printf("Digite o Nome da Cidade: ");
     scanf(" %[^\n]", city.nome_cidade); // Lê a linha inteira, incluindo espaços, até encontrar um Enter
 
-    printf("Digite a População: ");
+    printf("Digite a Populacao: ");
     scanf("%ld", &city.populacao);
 
-    printf("Digite a Área (em km²): ");
+    printf("Digite a Area (em km²): ");
     scanf("%lf", &city.area);
 
-    printf("Digite o PIB (em bilhões de reais): ");
+    printf("Digite o PIB (em bilhoes de reais): ");
     scanf("%lf", &city.pib);
 
-    printf("Digite o Número de Pontos Turísticos: ");
+    printf("Digite o Numero de Pontos Turisticos: ");
     scanf("%d", &city.num_pontos_turisticos);
 
     // Exibindo os dados da cidade que foram digitados
@@ -68,8 +68,8 @@ int main() {
     printf("Nome da Cidade: %s\n", city.nome_cidade);
     printf("População: %ld\n", city.populacao);
     printf("Área: %.2lf km²\n", city.area); // Formatando para 2 casas decimais
-    printf("PIB: %.2lf bilhões de reais\n", city.pib); // Formatando para 2 casas decimais
-    printf("Número de Pontos Turísticos: %d\n", city.num_pontos_turisticos);
+    printf("PIB: %.2lf bilhoes de reais\n", city.pib); // Formatando para 2 casas decimais
+    printf("Número de Pontos Turisticos: %d\n", city.num_pontos_turisticos);
 
     return 0;
 }
